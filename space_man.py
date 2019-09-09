@@ -138,7 +138,7 @@ def spaceman(secret_word):
                 spaceman(secret_word)
             else:
                 running = False
-
+#currently generating the same word on replay
         if num_guesses >= 7:
             print("Thank you for playing!")
             print ("The secret word was",(secret_word))
