@@ -133,7 +133,6 @@ def spaceman(secret_word):
             again = input("Do you want to play again? Enter (y/n):   ")
 
             if again.lower() == ("y"):
-
                 secret_word = load_word()
                 spaceman(secret_word)
             else:
@@ -144,8 +143,7 @@ def spaceman(secret_word):
             print ("The secret word was",(secret_word))
             again = input("Do you want to play again?(y/n)")
             if again == "y":
-                spaceman(secret_word)
-
+                spaceman(load_word())
             if "y" not in again:
                 running = False
 
