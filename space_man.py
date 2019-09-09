@@ -49,6 +49,15 @@ def get_guessed_word(secret_word, letters_guessed):
     return wordGuess
 
 
+def get_wrong_letters(letters_guessed,secret_word):
+    wrongLetters = []
+    for letter in letters_guessed:
+        if letter not in secret_word:
+            wrongLetters+=letter
+    return wrongLetters
+
+
+
 
 
 
@@ -78,6 +87,7 @@ def spaceman(secret_word):
 
 
     length= len(secret_word)
+    alphabet = "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r", "s","t","u","v","w","x","y","z"
 
 
     #TODO: show the player information about the game according to the project spec
@@ -110,6 +120,11 @@ def spaceman(secret_word):
         else:
             print("Try again!")
             num_guesses += 1
+        #lists the incorrect words so far
+        print("The incorrect letters so far are: ", get_wrong_letters(letters_guessed,secret_word))
+
+
+
 
 
         #TODO: show the guessed word so far
@@ -126,7 +141,7 @@ def spaceman(secret_word):
                 spaceman(secret_word)
             else:
                 running = False
-#currently generating the same word on replay
+
         if num_guesses >= 7:
             print("Thank you for playing!")
             print ("The secret word was",(secret_word))
