@@ -1,5 +1,5 @@
 import random
-
+import pyfiglet
 
 def load_word():
     '''
@@ -98,8 +98,11 @@ def spaceman(secret_word):
     running = True
     letters_guessed = []
     num_guesses = 0
+    # To print image
+    result = pyfiglet.figlet_format("YOU WON", font = "doh" )
 
     while running == True:
+        print(secret_word)
         letter = input("Please enter a letter: ")
         while len(letter) != 1 or letter in letters_guessed:
             letter = input("Please only enter one letter at a time, or enter a new letter:  ")
@@ -120,9 +123,11 @@ def spaceman(secret_word):
         print(get_guessed_word(secret_word, letters_guessed))
         # TODO: check if the game has been won or lost
 
-        # check why the y/n is not working
+
         if is_word_guessed(secret_word, letters_guessed):
             print("You win!")
+
+            print(result)
             again = input("Do you want to play again? Enter (y/n):   ")
 
             if again.lower() == ("y"):
@@ -130,7 +135,7 @@ def spaceman(secret_word):
                 spaceman(secret_word)
             else:
                 running = False
-        #so the player can guess as many times as the # characters in the secret word        
+        #so the player can guess as many times as the # characters in the secret word
         if num_guesses >= len(secret_word):
             print("Thank you for playing!")
             print("The secret word was", (secret_word))
