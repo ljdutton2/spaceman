@@ -102,7 +102,6 @@ def spaceman(secret_word):
     result = pyfiglet.figlet_format("YOU WON", font = "doh" )
 
     while running == True:
-        print(secret_word)
         letter = input("Please enter a letter: ")
         while len(letter) != 1 or letter in letters_guessed:
             letter = input("Please only enter one letter at a time, or enter a new letter:  ")
