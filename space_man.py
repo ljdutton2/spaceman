@@ -1,5 +1,6 @@
 import random
 import pyfiglet
+import unittest
 
 def load_word():
     '''
@@ -32,6 +33,11 @@ def is_word_guessed(secret_word, letters_guessed):
         if letter not in letters_guessed:
             return False
     return True
+
+def test_is_wordguessed():
+    assert isinstance(is_word_guessed(),str)
+
+
 
 
 def get_guessed_word(secret_word, letters_guessed):
@@ -73,6 +79,11 @@ def is_guess_in_word(guess, secret_word):
     if guess in secret_word:
         return True
     return False
+
+def test_guess_in_word():
+    assert is_guess_in_word.isalpha
+
+
 
 
 def spaceman(secret_word):
@@ -144,6 +155,8 @@ def spaceman(secret_word):
             if "y" not in again:
                 running = False
 
+def test_spaceman():
+    assert len(input) != 0
 
 # These function calls that will start the game
 secret_word = load_word()
